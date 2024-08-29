@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QIMB - Milad Day</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Quvvathul Islam Madrasa Baradka - Thajdharey Madheena</h1>
+        <form id="posterForm">
+            <div class="form-group">
+                <label for="photo">Player Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+                <input type="hidden" id="croppedPhoto" name="croppedPhoto">
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="place">Place:</label>
+                <input type="text" id="place" name="place" required>
+            </div>
+            <div class="form-group">
+                <label for="game">Game:</label>
+                <input type="text" id="game" name="game" required>
+            </div>
+            <button type="submit">Create Poster</button>
+        </form>
+        <div id="cropperModal" class="modal" style="display:none;">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="cropper-container">
+                  <img id="cropperImage" src="" alt="Upload to Crop">
+              </div>
+              <button id="cropButton">Crop</button>
+          </div>
+      </div>
+      
+        <div id="poster" class="poster" style="display:none;">
+          
+            <div class="poster-content">
+                <img id="posterPhoto" src="" alt="Player Photo">
+                <div class="poster-details">
+                    <p><strong>Name:</strong> <span id="posterName">Name</span></p>
+                    <p><strong>Place:</strong> <span id="posterPlace">Place</span></p>
+                    <p><strong>Game:</strong> <span id="posterGame">Game</span></p>
+                </div>
+            </div>
+        </div>
+
+        <a id="downloadLink" href="#" download="poster.png" style="display:none;">Download Poster</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
